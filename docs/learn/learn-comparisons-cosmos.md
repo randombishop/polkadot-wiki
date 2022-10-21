@@ -12,6 +12,14 @@ communicate with each other. Both protocols are predicated on the thesis that th
 multiple blockchains that need to interoperate with each other rather than individual blockchains
 existing in isolation.
 
+Though the vision that both protocols are working towards is the same, the approaches are quite
+different. Cosmos onboarding and zero to blockchain journey can be quite quick, as it allows you to
+write your blockchain in any language, it has an SDK that allows for easy integration. Anyone can
+create what are called hubs, and anyone can choose to connect to these hubs in order to build out
+their application specific runtimes. Cosmos currently does not have shared security, so hubs have to
+establish their own security. But there are efforts toward a shared security solution called
+[CCV](https://github.com/cosmos/ibc/blob/main/spec/app/ics-028-cross-chain-validation/overview_and_basic_concepts.md)
+
 ## Model
 
 Polkadot uses a sharded model where each shard in the protocol has an abstract state transition
@@ -118,6 +126,9 @@ Finally, in Cosmos, if a staker does not vote in a governance referendum, the va
 their voting power. Because of this, many validators in Cosmos have zero commission in order to
 acquire more control over the protocol. In Polkadot, governance and staking are completely disjoint;
 nominating a validator does not assign any governance voting rights to the validator.
+
+<!-- Simplify below -->
+<!-- The amount of tokens bonded gives a validator's voting power. When a validator starts unbonding some of its tokens, its voting power is reduced immediately, but the tokens are unbonded (i.e., unlocked) only after the unbonding period has elapsed. If a validator misbehaves (e.g., validates two different blocks at the same height), then the system can slash the validator's bonded tokens that gave its voting power during the misbehavior. This prevents validators from misbehaving and immediately exiting with their tokens, i.e., the unbonding period enables the system to punish misbehaving validators after the misbehaviors are committed. -->
 
 ## Message Passing
 
